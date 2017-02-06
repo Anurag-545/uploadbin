@@ -16,7 +16,7 @@
       <img src="images/logo.png" id="logoimg"/><a href="index.php">Uploadbin</a>
      </div>
      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-5">
-          <div class="btn-group" role="group" aria-label="...">
+          <div class="btn-group" role="group" aria-label="..." id="btndiv">
            <a href="admin/index.php">
   	         <button type="button" class="btn btn-default" id="button">Admin Login</button>
            </a>

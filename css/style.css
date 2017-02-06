@@ -15,7 +15,7 @@ font-style: Ubuntu;
 width: 14%;
 padding-right: 3%;
 z-index: 1;
-min-width: 40px;
+min-width: 30px;
 }
 #login-form{
 padding-left: 100px;
@@ -42,7 +42,12 @@ padding-left: 100px;
     padding: 4px;
     margin: 0px;
 }
-
+#btndiv{
+	float: right;
+	padding-top: 4%;
+	padding-bottom: 3%;
+	padding-right: 9%;
+}
 #righ
 {
 	text-align: right;
@@ -86,3 +91,26 @@ li { color: blue; }
 li:nth-child(odd) { color: green; }
 
 
+@media only screen and (max-width: 767px) {
+#logo{
+	font-size: 2em;
+}
+#button{
+	font-size: 1em;
+}
+}
+@media only screen and (min-width: 767px) {
+#logo{
+	font-size: 2.6em;
+}
+
+}
+@media only screen and (max-width: 480px) {
+#logo{
+	font-size: 1.5em;
+}
+#button{
+	font-size: 0.8em;
+}
+
+}
