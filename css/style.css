@@ -2,42 +2,62 @@
 #header{
 background-color: #2f364a;
 width: 100%;
-font:#fff;
+color: #fff;
 
 }
 #logo{
 padding-left: 8%;
 padding-top: 1%;
 padding-bottom: 1%;
-font-size: 2em;
 font-style: Ubuntu;
-
+font-size: 2em;
 }
 #logoimg{
 width: 14%;
 padding-right: 3%;
 z-index: 1;
+min-width: 40px;
+min-height: 40px;
 }
 #login-form{
 padding-left: 100px;
 
 }
-.row a{
-    text-decoration: none;
-    vertical-align: middle;
+.col-lg-6{
+	font-size: 3em;
 }
+.col-sm-6{
+	font-size: 1em;
+}
+.col-xs-7{
+	font-size: 0.5em;
+}
+.row{
+	    text-decoration: none;
+    vertical-align: middle;
+
+}
+#logo a{
+	  text-decoration: none;
+    color: #fff;
+}
+#logo a:hover{
+    color: #2098D1;
+}
+#button{
+	margin: 0px;
+	padding-top:3%;
+	padding-bottom: 3%;
+
+}
+
 #righ
 {
 	text-align: right;
 	float: right;
 
 }
-#search{
-margin: 0;
-padding-left: 35%;
-padding-top: 3%;
-padding-bottom: 3%;
-}
+
 .login{
 width:400px;
 margin:auto;
