@@ -4,37 +4,33 @@
 require_once('dbconnect.php');
 require_once("header.php");
 
-
 if(isset($_POST['submit']))
 {
-	$conn=mysqli_connect(host,uname,pass,dbname) or die("Error in connection " . mysqli_connect_error());  
+	$conn=mysqli_connect(host,uname,pass,dbname) or die("Error in connection " . mysqli_connect_error());
 	//upload a file
 	    $errors= array();
       $file_name = $_FILES['file']['name'];
       $file_size = $_FILES['file']['size'];
       $file_tmp = $_FILES['file']['tmp_name'];
       $file_type = $_FILES['file']['type'];
-      
-      
+
+
       if($file_size > 20971520) {
          $errors[]='File size must be <= 2 GB';
+				 print "$errors";
       }
-
-
+     else{
 //database dir name fetch
-      
   $q="SELECT id FROM dirname";
   $result=mysqli_query($conn,$q) or die("Error worst ");
 			$data=mysqli_fetch_array($result);
 			$da=$data['id'];
- 
  //adding entry to other database
 			//creating directory
-			mkdir('dir/$da', 0777);
-		
+			mkdir('dir/'.$da, 0777,true);
+
 			//upload code here
-			if(empty($errors)==true) {
-        	 move_uploaded_file($file_tmp,"dir/$da/".$file_name);
+        	move_uploaded_file($file_tmp,"dir/".$da."/".$file_name);
          	echo "<br><br><center><b>Success</b> - ";
          	echo "Your file has been uploaded to the below url<br>";
          	$actual_link = "http://$_SERVER[HTTP_HOST]";
@@ -45,17 +41,10 @@ if(isset($_POST['submit']))
           //echo "$put";
           //mysql_query("UPDATE dircontent SET id='$da'");
           //mysql_query("UPDATE dircontent SET location='$put' Where id='$da'");
-         	
-
-      		}
-      		else{
-         	print "$errors";
-      			}
-
 			$da=$data['id']+1;
   $q1="UPDATE dirname SET id=$da";
   mysqli_query($conn,$q1) or die("Error in query " . mysqli_error($conn));
-      
+    }
 	}
 ?>
 <center><br/>
@@ -74,4 +63,4 @@ if(isset($_POST['submit']))
 </center>
 
 </body>
-</html>	
+</html>
