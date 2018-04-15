@@ -7,7 +7,7 @@
 session_start();
 include_once 'headeradmin.php';
 include_once 'dbconnect.php';
-print("<a href='logout.php'><button id='righ' >Logout</button></a>");
+//print("<a href='logout.php'><button id='righ' >Logout</button></a>");
 
 
 print("<center>");
